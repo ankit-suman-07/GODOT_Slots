@@ -1,8 +1,16 @@
 [gd_scene format=3 uid="uid://dxnds2tlxm768"]
 
-[ext_resource type="Texture2D" uid="uid://b1f7edpiti02w" path="res://assets/star.png" id="1_3uriw"]
-[ext_resource type="Texture2D" uid="uid://bcav6cqdd4825" path="res://assets/seven.png" id="2_dv2sx"]
-[ext_resource type="Texture2D" uid="uid://dmpyfatmj7uni" path="res://assets/cherries.png" id="3_rxmqw"]
+[ext_resource type="Texture2D" uid="uid://dtrk8oa4toc0y" path="res://assets/star.png" id="1_3uriw"]
+[ext_resource type="Texture2D" uid="uid://c0swxuw2xp5fi" path="res://assets/seven.png" id="2_dv2sx"]
+[ext_resource type="Texture2D" uid="uid://mwuj1d2fb3ta" path="res://assets/cards.png" id="3_3uriw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dv2sx"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0, 0, 0.007843138, 1)
 
 [node name="GameScreen" type="Control" unique_id=335455508]
 layout_mode = 3
@@ -11,8 +19,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=759271357]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1741914402]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,18 +30,66 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer" unique_id=1116438220]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer" unique_id=1898910290]
 layout_mode = 2
-alignment = 1
+theme_override_constants/separation = 40
 
-[node name="first" type="TextureRect" parent="CenterContainer/HBoxContainer" unique_id=1726277907]
+[node name="FirstPanel" type="Panel" parent="CenterContainer/HBoxContainer" unique_id=1811768499]
+custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
-texture = ExtResource("1_3uriw")
+theme_override_styles/panel = SubResource("StyleBoxFlat_dv2sx")
 
-[node name="second" type="TextureRect" parent="CenterContainer/HBoxContainer" unique_id=1044132427]
-layout_mode = 2
+[node name="left" type="TextureRect" parent="CenterContainer/HBoxContainer/FirstPanel" unique_id=18232948]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_dv2sx")
 
-[node name="third" type="TextureRect" parent="CenterContainer/HBoxContainer" unique_id=1020556723]
+[node name="SecondPanel" type="Panel" parent="CenterContainer/HBoxContainer" unique_id=1442047872]
+custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
-texture = ExtResource("3_rxmqw")
+theme_override_styles/panel = SubResource("StyleBoxFlat_dv2sx")
+
+[node name="middle" type="TextureRect" parent="CenterContainer/HBoxContainer/SecondPanel" unique_id=1713122715]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3uriw")
+
+[node name="ThirdPanel" type="Panel" parent="CenterContainer/HBoxContainer" unique_id=912252384]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dv2sx")
+
+[node name="right" type="TextureRect" parent="CenterContainer/HBoxContainer/ThirdPanel" unique_id=120450356]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_3uriw")
