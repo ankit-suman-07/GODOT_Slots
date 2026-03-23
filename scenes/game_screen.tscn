@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dxnds2tlxm768"]
+
+[ext_resource type="Texture2D" uid="uid://b1f7edpiti02w" path="res://assets/star.png" id="1_3uriw"]
+[ext_resource type="Texture2D" uid="uid://bcav6cqdd4825" path="res://assets/seven.png" id="2_dv2sx"]
+[ext_resource type="Texture2D" uid="uid://dmpyfatmj7uni" path="res://assets/cherries.png" id="3_rxmqw"]
+
+[node name="GameScreen" type="Control" unique_id=335455508]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=759271357]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer" unique_id=1116438220]
+layout_mode = 2
+alignment = 1
+
+[node name="first" type="TextureRect" parent="CenterContainer/HBoxContainer" unique_id=1726277907]
+layout_mode = 2
+texture = ExtResource("1_3uriw")
+
+[node name="second" type="TextureRect" parent="CenterContainer/HBoxContainer" unique_id=1044132427]
+layout_mode = 2
+texture = ExtResource("2_dv2sx")
+
+[node name="third" type="TextureRect" parent="CenterContainer/HBoxContainer" unique_id=1020556723]
+layout_mode = 2
+texture = ExtResource("3_rxmqw")
