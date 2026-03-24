@@ -28,4 +28,4 @@ window/size/viewport_height=1200
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(0.7607843, 0.40784314, 0.3764706, 1)
+environment/defaults/default_clear_color=Color(0.7768683, 0.65700024, 0.14790049, 1)

@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://c5i4235j2bgpq"]
+
+[ext_resource type="FontFile" uid="uid://chx6dye232i65" path="res://assets/fonts/Pixel Game.otf" id="1_l6cm7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6cm7"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+
+[node name="MainMenu" type="Control" unique_id=607244240]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=850163551]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=135384036]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="GameName" type="Label" parent="CenterContainer/VBoxContainer" unique_id=2089263110]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 96
+text = "SLOTS"
+
+[node name="PlayGame" type="Button" parent="CenterContainer/VBoxContainer" unique_id=2132969716]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_l6cm7")
+text = "New Game"
+
+[node name="Exit" type="Button" parent="CenterContainer/VBoxContainer" unique_id=757960273]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_l6cm7")
+text = "Quit"
