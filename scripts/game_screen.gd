@@ -26,6 +26,8 @@ const SLOT_TEXTURES = [
 ]
 
 const MULTIPLIER = [25, 15, 10, 5, 2, 1]
+var bet = 0
+var total_earned = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -50,25 +52,45 @@ func _on_spin_btn_pressed() -> void:
 	spin_slot()
 	
 
+func update_winning():
+	pass
+
+func update_amount_label():
+	winnings_label.text = "Total Winnings: $" + str(total_earned)
 
 
 func _on_bet_5_pressed() -> void:
+	total_earned -= 5
+	update_amount_label()
+	bet_label.text = "BET: $5"
 	print("5")
 
 
 func _on_bet_25_pressed() -> void:
+	total_earned -= 25
+	update_amount_label()
+	bet_label.text = "BET: $25"
 	print("25")
 
 
 func _on_bet_50_pressed() -> void:
+	total_earned -= 50
+	update_amount_label()
+	bet_label.text = "BET: $50"
 	print("50")
 
 
 func _on_bet_100_pressed() -> void:
+	total_earned -= 100
+	update_amount_label()
+	bet_label.text = "BET: $100"
 	print("100")
 
 
 func _on_bet_250_pressed() -> void:
+	total_earned -= 250
+	update_amount_label()
+	bet_label.text = "BET: $250"
 	print("250")
 
 
