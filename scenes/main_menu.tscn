@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c5i4235j2bgpq"]
 
+[ext_resource type="Script" uid="uid://cx1cmwus5c1tx" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://chx6dye232i65" path="res://assets/fonts/Pixel Game.otf" id="1_l6cm7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6cm7"]
@@ -20,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ekxnf")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=850163551]
 layout_mode = 1
@@ -53,3 +55,6 @@ theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_l6cm7")
 text = "Quit"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/PlayGame" to="." method="_on_play_game_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

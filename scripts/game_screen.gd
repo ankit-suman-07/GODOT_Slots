@@ -59,10 +59,10 @@ func _on_bet_250_pressed() -> void:
 
 
 func _on_restart_btn_pressed() -> void:
-	print("Restart")
+	get_tree().reload_current_scene()
 	
 
 
 
 func _on_close_btn_pressed() -> void:
-	print("Close")
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
