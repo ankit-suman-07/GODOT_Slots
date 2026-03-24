@@ -1,5 +1,7 @@
 extends Control
 
+var rng = RandomNumberGenerator.new()
+
 @onready var left_slot = $CenterContainer/HBoxContainer/FirstPanel/left
 @onready var mid_slot = $CenterContainer/HBoxContainer/SecondPanel/middle
 @onready var right_slot = $CenterContainer/HBoxContainer/ThirdPanel/right
@@ -8,16 +10,26 @@ extends Control
 @onready var bet_label = $BetLabel
 
 const SEVEN = preload("res://assets/seven.png")
-const BELL = preload("res://assets/bell.png")
-const LEMON = preload("res://assets/lemon.png")
-const CHERRY = preload("res://assets/cherries.png")
 const STAR = preload("res://assets/star.png")
+const CHERRY = preload("res://assets/cherries.png")
+const LEMON = preload("res://assets/lemon.png")
+const BELL = preload("res://assets/bell.png")
 const WILD = preload("res://assets/cards.png")
 
+const SLOT_TEXTURES = [
+	SEVEN,
+	STAR,
+	CHERRY,
+	LEMON,
+	BELL,
+	WILD
+]
+
+const MULTIPLIER = [25, 15, 10, 5, 2, 1]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	rng.randomize()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,9 +37,11 @@ func _process(delta: float) -> void:
 	pass
 
 func spin_slot():
-	print("Spining")
+	left_slot.texture = SLOT_TEXTURES[rng.randi_range(0, SLOT_TEXTURES.size() - 1)]
+	mid_slot.texture = SLOT_TEXTURES[rng.randi_range(0, SLOT_TEXTURES.size() - 1)]
+	right_slot.texture = SLOT_TEXTURES[rng.randi_range(0, SLOT_TEXTURES.size() - 1)]
 
-func change_image():
+func update_slots():
 	pass
 
 
