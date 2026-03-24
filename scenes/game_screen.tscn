@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://bwgf7dhbt4b3h" path="res://scripts/game_screen.gd" id="1_dv2sx"]
 [ext_resource type="Texture2D" uid="uid://c0swxuw2xp5fi" path="res://assets/seven.png" id="2_dv2sx"]
 [ext_resource type="Texture2D" uid="uid://mwuj1d2fb3ta" path="res://assets/cards.png" id="3_3uriw"]
+[ext_resource type="Texture2D" uid="uid://x0jvlcqbcy5s" path="res://assets/restart.png" id="5_1urxi"]
+[ext_resource type="FontFile" uid="uid://chx6dye232i65" path="res://assets/fonts/Pixel Game.otf" id="5_dthvl"]
+[ext_resource type="Texture2D" uid="uid://cpykdi6sycsnn" path="res://assets/close.png" id="6_dthvl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dv2sx"]
 bg_color = Color(1, 1, 1, 1)
@@ -12,6 +15,36 @@ border_width_top = 20
 border_width_right = 20
 border_width_bottom = 20
 border_color = Color(0, 0, 0.007843138, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dthvl"]
+bg_color = Color(0.16206557, 0.1620656, 0.16206548, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r01d7"]
+bg_color = Color(0.05197096, 0.051970966, 0.051970914, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1urxi"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
 
 [node name="GameScreen" type="Control" unique_id=335455508]
 layout_mode = 3
@@ -95,3 +128,128 @@ offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_3uriw")
+
+[node name="BetBtns" type="HBoxContainer" parent="." unique_id=940599686]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -603.0
+offset_top = 194.0
+offset_right = 607.0
+offset_bottom = 274.0
+grow_horizontal = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="bet_5" type="Button" parent="BetBtns" unique_id=2010879928]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_dthvl")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_dthvl")
+text = "5"
+
+[node name="bet_25" type="Button" parent="BetBtns" unique_id=952644572]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_dthvl")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_dthvl")
+text = "25"
+
+[node name="bet_50" type="Button" parent="BetBtns" unique_id=1742202328]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_dthvl")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_dthvl")
+text = "50"
+
+[node name="bet_100" type="Button" parent="BetBtns" unique_id=1410627871]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_dthvl")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_dthvl")
+text = "100"
+
+[node name="bet_250" type="Button" parent="BetBtns" unique_id=1421909968]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_dthvl")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_dthvl")
+text = "250"
+
+[node name="SpinBtn" type="HBoxContainer" parent="." unique_id=2052457527]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -279.0
+offset_bottom = -179.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="SpinBtn" type="Button" parent="SpinBtn" unique_id=219214809]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_dthvl")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxFlat_r01d7")
+text = "SPIN"
+
+[node name="RestartBtn" type="Button" parent="." unique_id=354309504]
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 140.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_1urxi")
+icon = ExtResource("5_1urxi")
+icon_alignment = 1
+
+[node name="CloseBtn" type="Button" parent="." unique_id=386491969]
+layout_mode = 0
+offset_left = 1079.0
+offset_right = 1219.0
+offset_bottom = 140.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_1urxi")
+icon = ExtResource("6_dthvl")
+icon_alignment = 1
+
+[node name="WinningsLabel" type="Label" parent="." unique_id=1128548644]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 308.0
+offset_bottom = 429.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_dthvl")
+theme_override_font_sizes/font_size = 36
+text = "Total Winnings: $1000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BetLabel" type="Label" parent="." unique_id=853996365]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 762.0
+offset_bottom = 883.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_dthvl")
+theme_override_font_sizes/font_size = 36
+text = "Bet: $10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="BetBtns/bet_5" to="." method="_on_bet_5_pressed"]
+[connection signal="pressed" from="BetBtns/bet_25" to="." method="_on_bet_25_pressed"]
+[connection signal="pressed" from="BetBtns/bet_50" to="." method="_on_bet_50_pressed"]
+[connection signal="pressed" from="BetBtns/bet_100" to="." method="_on_bet_100_pressed"]
+[connection signal="pressed" from="BetBtns/bet_250" to="." method="_on_bet_250_pressed"]
+[connection signal="pressed" from="SpinBtn/SpinBtn" to="." method="_on_spin_btn_pressed"]
+[connection signal="pressed" from="RestartBtn" to="." method="_on_restart_btn_pressed"]
+[connection signal="pressed" from="CloseBtn" to="." method="_on_close_btn_pressed"]
