@@ -26,6 +26,7 @@ const SLOT_TEXTURES = [
 ]
 
 const MULTIPLIER = [25, 15, 10, 5, 2, 1]
+var WEIGHTS = PackedFloat32Array([1, 3, 4, 6, 8, 3])
 var bet = 0
 var total_earned = 100
 
@@ -37,14 +38,22 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
+	
 func spin_slot():
-	left_slot.texture = SLOT_TEXTURES[rng.randi_range(0, SLOT_TEXTURES.size() - 1)]
-	mid_slot.texture = SLOT_TEXTURES[rng.randi_range(0, SLOT_TEXTURES.size() - 1)]
-	right_slot.texture = SLOT_TEXTURES[rng.randi_range(0, SLOT_TEXTURES.size() - 1)]
+	# Use weights instead of probabilities
+	var left_index = rng.rand_weighted(WEIGHTS)
+	var mid_index = rng.rand_weighted(WEIGHTS)
+	var right_index = rng.rand_weighted(WEIGHTS)
+	
+	update_slots(left_index, mid_index, right_index)
+	#check_slots(left_index, mid_index, right_index)
+	
 
-func update_slots():
-	pass
+func update_slots(left, mid, right):
+	left_slot.texture = SLOT_TEXTURES[left]
+	mid_slot.texture = SLOT_TEXTURES[mid]
+	right_slot.texture = SLOT_TEXTURES[right]
+	
 
 
 
