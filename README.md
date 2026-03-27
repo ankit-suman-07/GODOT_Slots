@@ -1,13 +1,14 @@
-# Symbols to be used:
+# Slots
+
+A slot machine game developed in Godot using GDScript. The project implements weighted randomness for symbol generation, a betting and balance system, and a payout logic including multipliers, partial matches, wild symbols, and re-spin conditions. Designed to simulate core mechanics of real-world slot machines.
+
+### Symbols used:
 - 🍒 Cherry
 - 🍋 Lemon
 - 🔔 Bell
 - ⭐ Star
 - 7️⃣ Seven (rare, high payout)
 - 🃏 Wild (substitutes other symbols)
-
-# RockPaperScissor
-
 
 
 ### Game Design Document: [Click Here]()
