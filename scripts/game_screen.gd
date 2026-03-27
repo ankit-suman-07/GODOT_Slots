@@ -29,7 +29,7 @@ const SLOT_TEXTURES = [
 const MULTIPLIER = [25, 15, 10, 5, 2, 1]
 var WEIGHTS = PackedFloat32Array([2, 2, 4, 4, 2, 3])
 var bet = 0
-var total_earned = 100
+var total_earned = 1000
 var round_winning = 0
 var spin = false
 var bet_put = false
@@ -70,93 +70,76 @@ func _on_spin_btn_pressed() -> void:
 		spin_slot()
 
 func update_winning(left, mid, right):
-	if left == right and left == mid and left == 5:
-		print("Spin Again !!!!!!")
+	# Reset round winning every time
+	#round_winning = 0
+	
+	# Spin Again (WILD WILD WILD)
+	if left == mid and mid == right and left == 5:
 		round_winning_label.text = "Spin Again"
 		spin = true
+		return
+	
 	# All 3 match → full payout
-	elif left == mid and mid == right:
+	if left == mid and mid == right:
 		round_winning = bet * MULTIPLIER[left]
 		round_winning_label.text = "You won: " + str(round_winning)
-		total_earned += round_winning
-		return
-		
-	# Any 2 match → 50% payout
-	elif left == mid or left == right or mid == right:
-		if left == mid and right == 5:
+	
+	# Any 2 match → 50% payout (correct symbol used)
+	elif left == mid:
+		if right == 5:  # wild support
 			round_winning = bet * MULTIPLIER[left]
-		elif left == right and mid == 5:
-			round_winning = bet * MULTIPLIER[left]
-		elif right == mid and left == 5:
-			round_winning = bet * MULTIPLIER[right]
 		else:
 			round_winning = bet * MULTIPLIER[left] * 0.5
 		round_winning_label.text = "You won: " + str(round_winning)
-	elif mid == right:
-		round_winning = bet * MULTIPLIER[mid] * 0.5
+	
+	elif left == right:
+		if mid == 5:
+			round_winning = bet * MULTIPLIER[left]
+		else:
+			round_winning = bet * MULTIPLIER[left] * 0.5
 		round_winning_label.text = "You won: " + str(round_winning)
+	
+	elif mid == right:
+		if left == 5:
+			round_winning = bet * MULTIPLIER[mid]
+		else:
+			round_winning = bet * MULTIPLIER[mid] * 0.5
+		round_winning_label.text = "You won: " + str(round_winning)
+	
+	else:
+		round_winning_label.text = "No Win"
 	
 	total_earned += round_winning
 	update_amount_label()
-
+	
 func update_amount_label():
 	winnings_label.text = "Total Winnings: $" + str(total_earned)
 	
-
-func _on_bet_5_pressed() -> void:
+func bet_button_clicked(bet_placed):
+	bet = bet_placed
 	if bet_put:
 		return
-	bet = 5
-	if total_earned - bet >= 0:
-		total_earned -= 5
+	if total_earned - bet_placed >= 0:
+		total_earned -= bet_placed
 		update_amount_label()
-		bet_label.text = "BET: $5"
+		bet_label.text = "BET: $" + str(bet_placed)
 		bet_put = true
 		spin = true
+		
+func _on_bet_5_pressed() -> void:
+	bet_button_clicked(5)
 
 func _on_bet_25_pressed() -> void:
-	if bet_put:
-		return
-	bet = 25
-	if total_earned - bet >= 0:
-		total_earned -= 25
-		update_amount_label()
-		bet_label.text = "BET: $25"
-		bet_put = true
-		spin = true
+	bet_button_clicked(25)
 
 func _on_bet_50_pressed() -> void:
-	if bet_put:
-		return
-	bet = 50
-	if total_earned - bet >= 0:
-		total_earned -= 50
-		update_amount_label()
-		bet_label.text = "BET: $50"
-		bet_put = true
-		spin = true
+	bet_button_clicked(50)
 
 func _on_bet_100_pressed() -> void:
-	if bet_put:
-		return
-	bet = 100
-	if total_earned - bet >= 0:
-		total_earned -= 100
-		update_amount_label()
-		bet_label.text = "BET: $100"
-		bet_put = true
-		spin = true
+	bet_button_clicked(100)
 
 func _on_bet_250_pressed() -> void:
-	if bet_put:
-		return
-	bet = 250
-	if total_earned - bet >= 0:
-		total_earned -= 250
-		update_amount_label()
-		bet_label.text = "BET: $250"
-		bet_put = true
-		spin = true
+	bet_button_clicked(250)
 
 func _on_restart_btn_pressed() -> void:
 	get_tree().reload_current_scene()
