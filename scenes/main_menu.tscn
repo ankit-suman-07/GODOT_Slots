@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cx1cmwus5c1tx" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://chx6dye232i65" path="res://assets/fonts/Pixel Game.otf" id="1_l6cm7"]
+[ext_resource type="AudioStream" uid="uid://ds21puqjyqdj3" path="res://assets/sounds/Menu Selection Click.wav" id="3_bqqt6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6cm7"]
 bg_color = Color(0, 0, 0, 1)
@@ -55,6 +56,10 @@ theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_l6cm7")
 text = "Quit"
+
+[node name="ButtonSelectSound" type="AudioStreamPlayer2D" parent="." unique_id=371687533]
+stream = ExtResource("3_bqqt6")
+volume_db = 14.094
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/PlayGame" to="." method="_on_play_game_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

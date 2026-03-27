@@ -10,6 +10,11 @@ var rng = RandomNumberGenerator.new()
 @onready var round_winning_label = $RoundWinning
 @onready var bet_label = $BetLabel
 
+@onready var spinning_sound = $SpinSound
+@onready var bet_select_sound = $BetSelectSound
+@onready var spinning_stop_sound = $SpinningStopSound
+@onready var button_select_sound = $ButtonSelectSound
+
 const SEVEN = preload("res://assets/seven.png")
 const STAR = preload("res://assets/star.png")
 const CHERRY = preload("res://assets/cherries.png")
@@ -74,6 +79,8 @@ func _on_spin_btn_pressed() -> void:
 func update_winning(left, mid, right):
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
+	
+	spinning_sound.play()
 
 	for i in range(15):
 		left_slot.texture = SLOT_TEXTURES[rng.randi_range(1, SLOT_TEXTURES.size()-1)]
@@ -82,6 +89,7 @@ func update_winning(left, mid, right):
 		await get_tree().create_timer(0.2).timeout
 	# Reset round winning every time
 	#round_winning = 0
+	spinning_stop_sound.play()
 	
 	# Spin Again (WILD WILD WILD)
 	if left == mid and mid == right and left == 5:
@@ -129,6 +137,7 @@ func update_amount_label():
 	winnings_label.text = "Total Winnings: $" + str(total_earned)
 	
 func bet_button_clicked(bet_placed):
+	bet_select_sound.play()
 	bet = bet_placed
 	if bet_put:
 		return
@@ -155,7 +164,11 @@ func _on_bet_250_pressed() -> void:
 	bet_button_clicked(250)
 
 func _on_restart_btn_pressed() -> void:
+	button_select_sound.play()
+	await get_tree().create_timer(0.2).timeout
 	get_tree().reload_current_scene()
 	
 func _on_close_btn_pressed() -> void:
+	button_select_sound.play()
+	await get_tree().create_timer(0.2).timeout
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

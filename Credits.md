@@ -17,3 +17,26 @@
     -   License: Free for personal use
 
 ## Music
+-   Spinning Sound
+-   -   Name: Spinning Wheel
+-   -   Author: themightyglider
+-   -   License(s): CC0
+-   -   From: (opengameart.org)[https://opengameart.org/content/spinning-wheel-0]
+
+-   Spinning Stop Sound
+-   -   Name: metal-small3
+-   -   Author: artisticdude
+-   -   License(s): CC0
+-   -   From: (opengameart.org)[https://opengameart.org/content/rpg-sound-pack]
+
+-   Bet Select Sound
+-   -   Name: coin3
+-   -   Author: artisticdude
+-   -   License(s): CC0
+-   -   From: (opengameart.org)[https://opengameart.org/content/rpg-sound-pack]
+
+-   Menu Selection Sound
+-   -   Name: Menu Selection Click
+-   -   Author: NenadSimic
+-   -   License(s): CC0
+-   -   From: (opengameart.org)[https://opengameart.org/content/menu-selection-click]
