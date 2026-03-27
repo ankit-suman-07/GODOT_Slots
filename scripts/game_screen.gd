@@ -57,6 +57,8 @@ func spin_slot():
 	update_winning(left_index, mid_index, right_index)
 
 func update_slots(left, mid, right):
+	#show_animation()
+	round_winning_label.text = "Spinning"
 	left_slot.texture = SLOT_TEXTURES[left]
 	mid_slot.texture = SLOT_TEXTURES[mid]
 	right_slot.texture = SLOT_TEXTURES[right]
@@ -70,6 +72,14 @@ func _on_spin_btn_pressed() -> void:
 		spin_slot()
 
 func update_winning(left, mid, right):
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+
+	for i in range(15):
+		left_slot.texture = SLOT_TEXTURES[rng.randi_range(1, SLOT_TEXTURES.size()-1)]
+		mid_slot.texture = SLOT_TEXTURES[rng.randi_range(1, SLOT_TEXTURES.size()-1)]
+		right_slot.texture = SLOT_TEXTURES[rng.randi_range(1, SLOT_TEXTURES.size()-1)]
+		await get_tree().create_timer(0.2).timeout
 	# Reset round winning every time
 	#round_winning = 0
 	
@@ -112,6 +122,9 @@ func update_winning(left, mid, right):
 	total_earned += round_winning
 	update_amount_label()
 	
+func show_animation():
+	pass
+
 func update_amount_label():
 	winnings_label.text = "Total Winnings: $" + str(total_earned)
 	
