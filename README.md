@@ -11,7 +11,7 @@ A slot machine game developed in Godot using GDScript. The project implements we
 - 🃏 Wild (substitutes other symbols)
 
 
-### Game Design Document: [Click Here]()
+### Game Design Document: [Click Here](https://github.com/ankit-suman-07/GODOT_Slots/blob/main/GDD.md)
 ### Credits: [Click Here](https://github.com/ankit-suman-07/GODOT_Slots/blob/main/Credits.md)
 
 ## 💻 Setup locally

@@ -19,24 +19,24 @@ A simple 3-reel slot machine game built in Godot using GDScript. The game simula
 ## 3. Symbols
 | Index | Symbol  | Description       |
 |------|--------|-------------------|
-| 0    | SEVEN  | Highest value     |
-| 1    | STAR   | High value        |
-| 2    | CHERRY | Medium value      |
-| 3    | LEMON  | Low value         |
-| 4    | BELL   | Lowest value      |
-| 5    | WILD   | Special symbol    |
+| 0    | SEVEN  7️⃣| Highest value     |
+| 1    | STAR   ⭐| High value        |
+| 2    | CHERRY 🍒| Medium value      |
+| 3    | LEMON  🍋| Low value         |
+| 4    | BELL   🔔| Lowest value      |
+| 5    | WILD   🃏| Special symbol    |
 
 ---
 
 ## 4. Multipliers
 | Symbol  | Multiplier |
 |--------|-----------|
-| SEVEN  | 25x       |
-| STAR   | 15x       |
-| CHERRY | 10x       |
-| LEMON  | 5x        |
-| BELL   | 2x        |
-| WILD   | 1x        |
+| SEVEN  7️⃣| 25x       |
+| STAR   ⭐| 15x       |
+| CHERRY 🍒| 10x       |
+| LEMON  🍋| 5x        |
+| BELL   🔔| 2x        |
+| WILD   🃏| 1x        |
 
 ---
 

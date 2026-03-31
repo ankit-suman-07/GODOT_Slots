@@ -42,6 +42,9 @@ var bet_put = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	rng.randomize()
+	left_slot.texture = SLOT_TEXTURES[rng.randi_range(1, SLOT_TEXTURES.size()-1)]
+	mid_slot.texture = SLOT_TEXTURES[rng.randi_range(1, SLOT_TEXTURES.size()-1)]
+	right_slot.texture = SLOT_TEXTURES[rng.randi_range(1, SLOT_TEXTURES.size()-1)]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
