@@ -31,8 +31,8 @@ In godot editor, click open a new project and browse to the cloned repository fo
 ```
 
 ## Screenshots and Gameplay
--   **Main Menu**
-![Image](/screenshots/MainMenu.png)
+-   **Game Video**
+[![Video Title](/screenshots/MainMenu.png)](https://youtu.be/ZBPY5ssVSLc)
 -   **New Game**
 ![Image](/screenshots/GameStartScreen.png)
 -   **Spinning**
