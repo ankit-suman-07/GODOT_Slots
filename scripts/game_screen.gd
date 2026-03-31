@@ -91,6 +91,10 @@ func update_winning(left, mid, right):
 	#round_winning = 0
 	spinning_stop_sound.play()
 	
+	left_slot.texture = SLOT_TEXTURES[left]
+	mid_slot.texture = SLOT_TEXTURES[mid]
+	right_slot.texture = SLOT_TEXTURES[right]
+	
 	# Spin Again (WILD WILD WILD)
 	if left == mid and mid == right and left == 5:
 		round_winning_label.text = "Spin Again"
